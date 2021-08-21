@@ -1,0 +1,27 @@
+version: "3.4"
+
+services:
+  poll:
+    container_name: api-polls
+    image: poll
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8000:8000
+  postgres:
+    container_name: postgres_container
+    image: postgres
+    environment:
+      POSTGRES_DB: api-polls
+      POSTGRES_USER: poll-user
+      POSTGRES_PASSWORD: poll-password
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+volumes:
+  postgres:

@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "poll"
+version = "0.1.0"
+description = ""
+authors = ["Son Ng <nvs2394@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.68.0"
+pydantic = "^1.8.2"
+SQLAlchemy = "1.4.22"
+databases = "0.4.2"
+alembic = "^1.6.5"
+psycopg2-binary = "^2.9.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
